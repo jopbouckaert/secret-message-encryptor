@@ -1,6 +1,6 @@
 # Example Project
 
-Author: PLEASE_ENTER_YOUR_NAME_HERE
+Author: Jop Bouckaert
 
 ## Reflection on the Assignment
 
