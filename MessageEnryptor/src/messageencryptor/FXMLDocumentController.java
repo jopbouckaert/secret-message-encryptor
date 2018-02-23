@@ -23,6 +23,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private TextArea MessageTextArea;
+    @FXML
     private PasswordField PasswordField;
     
     
@@ -31,17 +32,18 @@ public class FXMLDocumentController implements Initializable {
         String clearText = MessageTextArea.getText();
         String secretkey = PasswordField.getText();
         Encryptor encryptor = new Encryptor(secretkey);
-        encryptor.encrypt(secretkey);
-        
-        System.out.println("Done");
-        MessageTextArea.setText("Message encrypted");
+        String encryptedMessage = encryptor.encrypt(clearText);
+        MessageTextArea.setText(encryptedMessage);
         
     }
     
     @FXML
     private void handleButtonDecrypt(ActionEvent event) {
-        System.out.println("Done");
-        MessageTextArea.setText("Message decrypted");
+        String clearText = MessageTextArea.getText();
+        String secretkey = PasswordField.getText();
+        Encryptor encryptor = new Encryptor(secretkey);
+        String decryptedMessage = encryptor.decrypt(clearText);
+        MessageTextArea.setText(decryptedMessage);
     }
     
     
